@@ -89,7 +89,8 @@
 
         .greeting{
             position: relative;
-            // padding: 10px 8px;
+            margin: 10px 4px;
+            padding: 10px 8px;
             
             .profile-pic, .message{
                 display: inline;
@@ -107,6 +108,39 @@
                 top: 20%;
             }
         }
+
+        .today{
+            margin: 10px 4px;
+            padding: 10px 8px;
+
+            .values {
+                margin: 20px 4px;
+
+                .value{
+                    margin: 12px 4px;
+                }
+
+                .want-btn{
+                    @include text_monts(.8rem, white);
+                    cursor: pointer;
+                    height: 35px;
+                    width: 100px;
+                    background: blue;
+                    border-radius: 10px;
+                    outline: none;
+                }
+            }
+
+            .transactions{
+                margin: 10px 4px;
+
+                .txn{
+                    margin: 20px 4px;
+                }
+            }
+        }
+
+        
     }
 
     .middle{

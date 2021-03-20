@@ -100,6 +100,8 @@
 
 .main-content .left .greeting {
   position: relative;
+  margin: 10px 4px;
+  padding: 10px 8px;
 }
 
 .main-content .left .greeting .profile-pic, .main-content .left .greeting .message {
@@ -116,6 +118,39 @@
   position: absolute;
   margin: 0px 15px;
   top: 20%;
+}
+
+.main-content .left .today {
+  margin: 10px 4px;
+  padding: 10px 8px;
+}
+
+.main-content .left .today .values {
+  margin: 20px 4px;
+}
+
+.main-content .left .today .values .value {
+  margin: 12px 4px;
+}
+
+.main-content .left .today .values .want-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: white;
+  cursor: pointer;
+  height: 35px;
+  width: 100px;
+  background: blue;
+  border-radius: 10px;
+  outline: none;
+}
+
+.main-content .left .today .transactions {
+  margin: 10px 4px;
+}
+
+.main-content .left .today .transactions .txn {
+  margin: 20px 4px;
 }
 
 .main-content .middle {
