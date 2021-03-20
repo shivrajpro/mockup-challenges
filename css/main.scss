@@ -145,31 +145,95 @@
 
     .middle{
         border:1px solid darkorchid;
+        margin: 10px 15px;
+
+        p:first-child{
+            color: blue;
+            font-size: .8rem;
+            font-weight: 600;
+            margin: 5px 4px;
+        }
+        
+        h1{
+            font-size: 1rem;
+            margin: 5px 4px;
+        }
 
         .goals-section{
             display: flex;
             justify-content: space-around;
+            margin: 10px 0px;
+
+            .goals{
+                // text-align: center;
+
+                h2{
+                    font-family: 'Montserrat', sans-serif;
+                }
+
+                p{
+                    @include text_monts(0.8rem, rgb(112, 110, 110));
+                    font-weight: bolder;                  
+                }
+            }
         }
 
         .contributions{
+            margin: 10px 5px;
+
+            h2{
+                font-size: 1rem;
+            }
+
             .chart img{
                 width: 80%;
             }
         }
 
-        .comparison .visualization{
-            display: flex;
+        .comparison{
+            margin: 10px 5px;
 
-            .factors{
-                width: 25%;
+            h2{
+                font-size: 1rem;
             }
 
-            .gauge-charts{
-                width: 75%;
-                display: flex;
+            p{
+                @include text_monts(0.8rem, rgb(112, 110, 110));
+                margin: 2px 0px;
+            }
 
-                img{
-                    width: 150px;
+            .visualization{
+                display: flex;
+                margin: 10px 4px;
+
+                .factors{
+                    width: 28%;
+                    margin: 10px 5px;
+
+                    .factor{
+                        margin: 10px 4px;
+
+                        select{
+                            cursor: pointer;
+                            @include text_monts(0.8rem, rgb(112, 110, 110));
+                            border: none;
+                            outline: none;
+                        }
+
+                        label{
+                            @include text_monts(0.8rem, black);
+                            font-weight: bolder;
+                        }
+                    }
+                }
+    
+                .gauge-charts{
+                    width: 72%;
+                    display: flex;
+    
+                    img{
+                        width: 150px;
+                    }
                 }
             }
         }
