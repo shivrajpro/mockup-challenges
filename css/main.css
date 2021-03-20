@@ -57,14 +57,33 @@
 
 .rq-navbar .nav-list-items .top {
   height: 30%;
+  padding: 5px;
 }
 
 .rq-navbar .nav-list-items .middle {
-  height: 60%;
+  height: 55%;
+  padding: 5px;
 }
 
 .rq-navbar .nav-list-items .bottom {
-  height: 10%;
+  height: 15%;
+  position: relative;
+  padding: 5px;
+}
+
+.rq-navbar .nav-list-items .bottom li:first-child {
+  height: 35px;
+}
+
+.rq-navbar .nav-list-items .bottom li:first-child::before {
+  position: absolute;
+  content: "";
+  top: 10%;
+  left: 25px;
+  background-color: aqua;
+  height: 8px;
+  width: 8px;
+  border-radius: 100vh;
 }
 
 .rq-navbar .nav-list-items .list-item {
