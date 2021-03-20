@@ -41,7 +41,7 @@
 }
 
 .rq-navbar{
-    border: 1px solid black;
+    // border: 1px solid black;
     
     .nav-list-items{
         height: 98vh;
@@ -78,13 +78,13 @@
 }
 
 .main-content{
-    border: 1px solid red;
+    // border: 1px solid red;
     display: grid;
     // width: 100%;
     grid-template-columns: 25% 50% 25%;
 
     .left{
-        border:1px solid darkkhaki;
+        // border:1px solid darkkhaki;
         background: rgb(253, 253, 253);
 
         .greeting{
@@ -122,10 +122,11 @@
 
                 .want-btn{
                     @include text_monts(.8rem, white);
+                    font-weight: bolder;
                     cursor: pointer;
                     height: 35px;
                     width: 100px;
-                    background: blue;
+                    background: #383CC1;
                     border-radius: 10px;
                     outline: none;
                 }
@@ -144,7 +145,7 @@
     }
 
     .middle{
-        border:1px solid darkorchid;
+        // border:1px solid darkorchid;
         margin: 10px 15px;
 
         p:first-child{
@@ -232,7 +233,7 @@
                     display: flex;
     
                     img{
-                        width: 150px;
+                        width: 100%;
                     }
                 }
             }
@@ -242,7 +243,93 @@
 
     .right{
         background: rgb(253, 253, 253);
-        border:1px solid deepskyblue;
+        // border:1px solid deepskyblue;
+        margin: 20px 5px;
+        position: relative;
+
+        h2{
+            font-size: 1rem;
+            margin: 10px 4px;
+        }
+        
+        .strategy{
+            margin: 10px 5px;
+            position: relative;
+
+            p{
+                @include text_monts(1rem, black);
+                font-weight: 700;            
+                margin-bottom: 5px;         
+            }
+        
+            label{
+                position: absolute;
+                @include text_monts(0.8rem, black);
+                font-weight: bolder;
+                top: 50%;
+                left: 50%;
+            }
+        }
+
+        .rate-value{
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 15px 5px;
+
+            p, span{
+                @include text_monts(1rem, black);
+                font-weight: 700;            
+            }
+        }
+
+        button{
+            margin: 10px 5px;
+            transform: translateX(80%);
+            height: 40px;
+            width: 100px;
+            @include text_monts(.8rem, white);
+            font-weight: bolder;
+            cursor: pointer;
+            background: #383CC1;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .help-link{
+            transform: translateX(25%);
+            margin: 10px 5px;
+
+            a{
+                @include text_monts(0.8rem, #383CC1);
+                font-weight: bolder;
+                text-decoration: none;
+
+                i{
+                    font-size: 0.6rem;
+                }
+            }
+        }
+
+        .housing{
+            margin: 10px;
+            padding: 10px;
+            @include text_monts(0.8rem, black);
+            // font-weight: bolder;
+        
+            .rq-text-small-grey{
+                margin: 10px 0px;
+            }
+            a{
+                @include text_monts(0.8rem, #383CC1);
+                font-weight: bolder;
+                text-decoration: none;
+
+                i{
+                    font-size: 0.6rem;
+                }
+            }            
+        }
     }
     
 }

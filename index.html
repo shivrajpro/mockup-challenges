@@ -154,32 +154,41 @@
             <div class="right">
                 <h2>Retirement Strategy</h2>
                 <hr>
-                <p>Employee Contribution</p>
-                <br>
-                <input type="range" min="0" max="15" value="12" >
-                <label for="ec">12%</label>
-                <br>
-                <p>Retirement Age</p>
-                <br>
-                <input type="range" min="20" max="90" value="65" >
-                <label for="age">65</label>
+
+                <div class="strategy">
+                    <p>Employee Contribution</p>
+                    <input name="ec" type="range" min="0" max="15" value="12" >
+                    <label for="ec">12%</label>
+                </div>
+
+                <div class="strategy">
+                    <p>Retirement Age</p>
+                    <input name="ra" type="range" min="20" max="90" value="65" >
+                    <label for="ra">65</label>
+                </div>
 
                 <hr>
-                <label>Employee Contribution</label> &nbsp; <span>8.4%</span>
-                <hr>
-                <label>Interet Rate</label> &nbsp; <span>5%</span>
+
+                <div class="rate-value">
+                    <p>Employee Contribution</p><p>8.4%</p>
+                </div>
+
+                <div class="rate-value">
+                    <p>Interest Rate</p><p>5%</p>
+                </div>
 
                 <br>
                 <button>Update</button>
 
-                <p><a href="#">View Help Docs&gt;</a></p>
-                <br><br>
+                <p class="help-link"><a href="#">View Help Docs <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 
-                <p>Are you considering a</p>
-                <h3>Housing Advance ?</h3>
-                <p>Limited Time Reduced Interest</p>
+                <div class="housing">
+                    <p>Are you considering a</p>
+                    <h3>Housing Advance ?</h3>
+                    <p class="rq-text-small-grey">Limited Time Reduced Interest</p>
+                    <p><a href="#">Learn More <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+                </div>
 
-                <p><a href="#">Learn More&gt;</a></p>
             </div>
         </main>
     </div>
