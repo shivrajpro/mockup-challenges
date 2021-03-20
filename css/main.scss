@@ -157,13 +157,16 @@
         
         h1{
             font-size: 1rem;
-            margin: 5px 4px;
+            margin: 5px 4px 15px 4px;
+            height: 35px;
         }
 
         .goals-section{
             display: flex;
-            justify-content: space-around;
-            margin: 10px 0px;
+            justify-content: space-between;
+            height: 70px;
+            margin: 15px 0px;
+            position: relative;
 
             .goals{
                 // text-align: center;
@@ -175,6 +178,15 @@
                 p{
                     @include text_monts(0.8rem, rgb(112, 110, 110));
                     font-weight: bolder;                  
+                }
+
+                &::after{
+                    position: absolute;
+                    content: "";
+                    bottom: 10px;
+                    height: 1px;
+                    width: 25%;
+                    background-color: blue;
                 }
             }
         }
@@ -244,6 +256,7 @@
     .right{
         background: rgb(253, 253, 253);
         // border:1px solid deepskyblue;
+        left: 20px;
         margin: 20px 5px;
         position: relative;
 
@@ -274,8 +287,8 @@
         .rate-value{
             display: flex;
             justify-content: space-between;
-            width: 90%;
-            margin: 15px 5px;
+            width: 85%;
+            margin: 15px 1px;
 
             p, span{
                 @include text_monts(1rem, black);
@@ -314,12 +327,21 @@
         .housing{
             margin: 10px;
             padding: 10px;
-            @include text_monts(0.8rem, black);
-            // font-weight: bolder;
-        
+            
+            
+            p{
+                @include text_monts(0.8rem, rgb(112, 110, 110));
+                font-weight: bolder;
+            }
+
+            h3{
+                font-family: 'Montserrat', sans-serif;
+            }
+
             .rq-text-small-grey{
                 margin: 10px 0px;
             }
+            
             a{
                 @include text_monts(0.8rem, #383CC1);
                 font-weight: bolder;
@@ -328,7 +350,16 @@
                 i{
                     font-size: 0.6rem;
                 }
-            }            
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                left: 5px;
+                width: 2px;
+                background-color: blue;
+                height: 100px;
+            }
         }
     }
     

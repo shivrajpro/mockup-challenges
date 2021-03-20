@@ -161,16 +161,20 @@
 
 .main-content .middle h1 {
   font-size: 1rem;
-  margin: 5px 4px;
+  margin: 5px 4px 15px 4px;
+  height: 35px;
 }
 
 .main-content .middle .goals-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin: 10px 0px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 70px;
+  margin: 15px 0px;
+  position: relative;
 }
 
 .main-content .middle .goals-section .goals h2 {
@@ -182,6 +186,15 @@
   font-size: 0.8rem;
   color: #706e6e;
   font-weight: bolder;
+}
+
+.main-content .middle .goals-section .goals::after {
+  position: absolute;
+  content: "";
+  bottom: 10px;
+  height: 1px;
+  width: 25%;
+  background-color: blue;
 }
 
 .main-content .middle .contributions {
@@ -256,6 +269,7 @@
 
 .main-content .right {
   background: #fdfdfd;
+  left: 20px;
   margin: 20px 5px;
   position: relative;
 }
@@ -295,8 +309,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 90%;
-  margin: 15px 5px;
+  width: 85%;
+  margin: 15px 1px;
 }
 
 .main-content .right .rate-value p, .main-content .right .rate-value span {
@@ -343,9 +357,17 @@
 .main-content .right .housing {
   margin: 10px;
   padding: 10px;
+}
+
+.main-content .right .housing p {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.8rem;
-  color: black;
+  color: #706e6e;
+  font-weight: bolder;
+}
+
+.main-content .right .housing h3 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .main-content .right .housing .rq-text-small-grey {
@@ -362,5 +384,14 @@
 
 .main-content .right .housing a i {
   font-size: 0.6rem;
+}
+
+.main-content .right .housing::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  width: 2px;
+  background-color: blue;
+  height: 100px;
 }
 /*# sourceMappingURL=main.css.map */
