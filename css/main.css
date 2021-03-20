@@ -1,8 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Merriweather', serif;
+}
+
+.monts-small-grey {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: #645f5f;
+}
+
+.rq-title {
+  font-weight: bold;
+  font-style: 1.5rem;
+}
+
+.rq-text-large {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: black;
+}
+
+.rq-text-small {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: black;
+  font-weight: 700;
+}
+
+.rq-text-small-grey {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: #706e6e;
+  font-weight: bolder;
 }
 
 .grid-container {
@@ -61,7 +95,7 @@
 
 .main-content .left {
   border: 1px solid darkkhaki;
-  background: #f5f4f4;
+  background: #fdfdfd;
 }
 
 .main-content .left .greeting {
@@ -122,7 +156,7 @@
 }
 
 .main-content .right {
-  background: #f5f4f4;
+  background: #fdfdfd;
   border: 1px solid deepskyblue;
 }
 /*# sourceMappingURL=main.css.map */

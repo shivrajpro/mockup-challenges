@@ -1,0 +1,5 @@
+@mixin text_monts($fontSize, $fontColor) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: $fontSize;
+    color:  $fontColor;
+}

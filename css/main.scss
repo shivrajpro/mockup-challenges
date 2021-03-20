@@ -1,7 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat&display=swap');
+@import 'mixins';
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Merriweather', serif;  
+}
+
+.monts-small-grey{
+    @include text_monts(.8rem, rgb(100, 95, 95));
+}
+
+.rq-title{
+    font-weight: bold;
+    font-style: 1.5rem;
+}
+
+.rq-text-large{
+    @include text_monts(2rem, black);
+}
+
+.rq-text-small{
+    @include text_monts(1rem, black);
+    font-weight: 700;
+}
+
+.rq-text-small-grey{
+    @include text_monts(0.8rem, rgb(112, 110, 110));
+    font-weight: bolder;
 }
 
 .grid-container{
@@ -57,7 +85,7 @@
 
     .left{
         border:1px solid darkkhaki;
-        background: rgb(245, 244, 244);
+        background: rgb(253, 253, 253);
 
         .greeting{
             position: relative;
@@ -115,7 +143,7 @@
     }
 
     .right{
-        background: rgb(245, 244, 244);
+        background: rgb(253, 253, 253);
         border:1px solid deepskyblue;
     }
     
