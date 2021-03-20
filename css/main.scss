@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 3% 97%;
+    grid-column-gap:5px;
+}
+
+.rq-navbar{
+    border: 1px solid black;
+    
+    .nav-list-items{
+        height: 98vh;
+        list-style-type: none;
+        padding: 10px 6px;
+
+        
+        .top{
+            height: 30%;
+        }
+        
+        .middle{
+            height: 60%;
+        }
+        
+        .bottom{
+            height: 10%;
+        }
+        
+        .list-item{
+            margin: 10px 0;
+            cursor: pointer;
+
+            i{
+                font-size: 1.5rem;
+                color: darkgrey;
+            }
+        }
+
+        .active i{
+            color: blue;
+        }
+    }
+}
+
+.main-content{
+    border: 1px solid red;
+    display: grid;
+    // width: 100%;
+    grid-template-columns: 25% 50% 25%;
+
+    .left{
+        border:1px solid darkkhaki;
+        background: rgb(245, 244, 244);
+
+        .greeting{
+            position: relative;
+            // padding: 10px 8px;
+            
+            .profile-pic, .message{
+                display: inline;
+            }
+
+            picture img{
+                height: 100px;
+                width: 100px;
+                border-radius: 100vh;
+            }
+
+            .message{
+                position: absolute;
+                margin: 0px 15px;
+                top: 20%;
+            }
+        }
+    }
+
+    .middle{
+        border:1px solid darkorchid;
+
+        .goals-section{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .contributions{
+            .chart img{
+                width: 80%;
+            }
+        }
+
+        .comparison .visualization{
+            display: flex;
+
+            .factors{
+                width: 25%;
+            }
+
+            .gauge-charts{
+                width: 75%;
+                display: flex;
+
+                img{
+                    width: 150px;
+                }
+            }
+        }
+
+    }
+
+    .right{
+        background: rgb(245, 244, 244);
+        border:1px solid deepskyblue;
+    }
+    
+}
