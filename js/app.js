@@ -7,6 +7,92 @@ $(document).ready(function () {
 });
 
 function addStackedBarCHart() {
+    let employerData = [], employeeData = [], totalInterestData = [];
+
+    for (let i = 1; i <= 37; i+=3) {
+        let obj = {};
+
+        let color = 'blue';
+        //#85B0FF #4A35FF #0800A3
+        switch (i%3) {
+            case 0:
+                color = "#85B0FF";
+                break;
+
+            case 1:
+                color = "#4A35FF";
+                break;
+
+            case 2:
+                color = "#0800A3";
+                break;
+            
+            default:
+                break;
+        }
+
+        obj.y = i*10;
+        obj.color = color;
+
+        employerData.push(obj);
+    }
+
+    for (let i = 2; i <= 38; i+=3) {
+        let obj = {};
+
+        let color = 'blue';
+        switch (i%3) {
+            case 0:
+                color = "#85B0FF";
+                break;
+
+            case 1:
+                color = "#4A35FF";
+                break;
+
+            case 2:
+                color = "#0800A3";
+                break;
+            
+            default:
+                break;
+        }
+
+        obj.y = i*10;
+        obj.color = color;        
+        employeeData.push(obj);
+    }
+
+    for (let i = 3; i <= 39; i+=3) {
+        let obj = {};
+
+        let color = 'blue';
+        switch (i%3) {
+            case 0:
+                color = "#85B0FF";
+                break;
+
+            case 1:
+                color = "#4A35FF";
+                break;
+
+            case 2:
+                color = "#0800A3";
+                break;
+            
+            default:
+                break;
+        }
+
+        obj.y = i*10;
+        obj.color = color;        
+        totalInterestData.push(obj);
+    }
+
+    // console.log('>>',employerData);
+    // console.log('>>',employeeData);
+    // console.log('>>',totalInterestData);
+
     var stackedBarChartOpt = {
         chart: {
             type: 'column',
@@ -19,7 +105,7 @@ function addStackedBarCHart() {
             text: ''
         },
         xAxis: {
-            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+            categories: ['20', '', '25', '', '30', '', '35', '', '40', '', '60', '', '65'],
             title: {
                 text: null
             }
@@ -38,7 +124,7 @@ function addStackedBarCHart() {
             }
         },
         tooltip: {
-            valueSuffix: ' millions'
+            valueSuffix: ' '
         },
         plotOptions: {
             bar: {
@@ -65,16 +151,19 @@ function addStackedBarCHart() {
         },
         series: [
             {
-                name: 'Year 1800',
-                data: [107, 31, 635, 203, 2]
+                name: 'Employer',
+                color:"#0800A3",
+                data: employerData
             },
             {
-                name: 'Year 1900',
-                data: [133, 156, 947, 408, 6]
+                name: 'Employee',
+                color:"#4A35FF",
+                data: employeeData
             },
             {
-                name: 'Year 2008',
-                data: [973, 914, 4054, 732, 34]
+                name: 'Total Interest',
+                color:"#85B0FF",
+                data: totalInterestData
             }
         ]
     }
