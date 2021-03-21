@@ -117,7 +117,8 @@
   padding: 10px 8px;
 }
 
-.main-content .left .greeting .profile-pic, .main-content .left .greeting .message {
+.main-content .left .greeting .profile-pic,
+.main-content .left .greeting .message {
   display: inline;
 }
 
@@ -342,7 +343,8 @@
   margin: 15px 1px;
 }
 
-.main-content .right .rate-value p, .main-content .right .rate-value span {
+.main-content .right .rate-value p,
+.main-content .right .rate-value span {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: black;

@@ -7,86 +7,79 @@ $(document).ready(function () {
 });
 
 function addStackedBarCHart() {
-    var chart = {
-        type: 'column',
-        height:250
-    };
-    var title = {
-        text: ''
-    };
-    var subtitle = {
-        text: ''
-    };
-    var xAxis = {
-        categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
-        title: {
-            text: null
-        }
-    };
-    var yAxis = {
-        min: 0,
-        title: {
-            text: '',
-            align: 'high'
+    var stackedBarChartOpt = {
+        chart: {
+            type: 'column',
+            height: 250
         },
-        labels: {
-            overflow: 'justify',
-            formatter: function() {
-                return '$'+this.value;
-            }            
-        }
-    };
-    var tooltip = {
-        valueSuffix: ' millions'
-    };
-    var plotOptions = {
-        bar: {
-            dataLabels: {
-                enabled: true
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+            title: {
+                text: null
             }
         },
-        series: {
-            stacking: 'normal'
-        }
-    };
-    var legend = {
-        layout: 'horizontal',
-        align: 'center',
-        verticalAlign: 'top',
-        itemMarginTop: 0,
-        itemMarginBottom: 0
-    };
-    var credits = {
-        enabled: false
-    };
-    var series = [
-        {
-            name: 'Year 1800',
-            data: [107, 31, 635, 203, 2]
+        yAxis: {
+            min: 0,
+            title: {
+                text: '',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify',
+                formatter: function () {
+                    return '$' + this.value;
+                }
+            }
         },
-        {
-            name: 'Year 1900',
-            data: [133, 156, 947, 408, 6]
+        tooltip: {
+            valueSuffix: ' millions'
         },
-        {
-            name: 'Year 2008',
-            data: [973, 914, 4054, 732, 34]
-        }
-    ];
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            },
+            series: {
+                stacking: 'normal'
+            }
+        },
+        legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'top',
+            itemMarginTop: 0,
+            itemMarginBottom: 0
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: [
+            {
+                name: 'Year 1800',
+                data: [107, 31, 635, 203, 2]
+            },
+            {
+                name: 'Year 1900',
+                data: [133, 156, 947, 408, 6]
+            },
+            {
+                name: 'Year 2008',
+                data: [973, 914, 4054, 732, 34]
+            }
+        ]
+    }
 
-    var json = {};
-    json.chart = chart;
-    json.title = title;
-    json.subtitle = subtitle;
-    json.tooltip = tooltip;
-    json.xAxis = xAxis;
-    json.yAxis = yAxis;
-    json.series = series;
-    json.plotOptions = plotOptions;
-    json.legend = legend;
-    json.credits = credits;
-    json.exporting = {enabled: false};
-    $('#stackedBarChart').highcharts(json);    
+    $('#stackedBarChart').highcharts(stackedBarChartOpt);
 }
 
 function addGaugeChart(containerId, gaugeValue) {
@@ -95,20 +88,20 @@ function addGaugeChart(containerId, gaugeValue) {
         chart: {
             type: 'solidgauge',
             height: 100,
-            width:100,
+            width: 100,
             margin: [0, 0, 0, 0],
             events: {
                 load: alignLabel,
-                redraw: alignLabel                
+                redraw: alignLabel
             }
         },
 
-        credits:{
+        credits: {
             enabled: false
         },
 
-        exporting:{
-            enabled:false
+        exporting: {
+            enabled: false
         },
 
         title: {
@@ -177,23 +170,23 @@ function addGaugeChart(containerId, gaugeValue) {
         }]
     }
 
-    $("#"+containerId).highcharts(gaugeOptions);
+    $("#" + containerId).highcharts(gaugeOptions);
 
     var grossLabel;
 
     function alignLabel() {
-      var chart = this;
-    
-      if (grossLabel) {
-        grossLabel.destroy();
-      }
-    
-      grossLabel = chart.renderer.text(gaugeValue+'%', (chart.plotWidth / 3) + 5, (chart.plotHeight / 2) + 10)
-        .css({
-          color: '#000',
-          fontFamily:"'Montserrat', sans-serif",
-          fontSize: '12pt',
-          fontWeight:"bold"
-        }).add();
-    }  
+        var chart = this;
+
+        if (grossLabel) {
+            grossLabel.destroy();
+        }
+
+        grossLabel = chart.renderer.text(gaugeValue + '%', (chart.plotWidth / 3) + 5, (chart.plotHeight / 2) + 10)
+            .css({
+                color: '#000',
+                fontFamily: "'Montserrat', sans-serif",
+                fontSize: '12pt',
+                fontWeight: "bold"
+            }).add();
+    }
 }
