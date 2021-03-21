@@ -8,13 +8,14 @@ $(document).ready(function () {
 
 function addStackedBarCHart() {
     var chart = {
-        type: 'column'
+        type: 'column',
+        height:250
     };
     var title = {
-        text: 'Historic World Population by Region'
+        text: ''
     };
     var subtitle = {
-        text: 'Source: Wikipedia.org'
+        text: ''
     };
     var xAxis = {
         categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
@@ -25,11 +26,14 @@ function addStackedBarCHart() {
     var yAxis = {
         min: 0,
         title: {
-            text: 'Population (millions)',
+            text: '',
             align: 'high'
         },
         labels: {
-            overflow: 'justify'
+            overflow: 'justify',
+            formatter: function() {
+                return '$'+this.value;
+            }            
         }
     };
     var tooltip = {
@@ -46,18 +50,11 @@ function addStackedBarCHart() {
         }
     };
     var legend = {
-        layout: 'vertical',
-        align: 'right',
+        layout: 'horizontal',
+        align: 'center',
         verticalAlign: 'top',
-        x: -40,
-        y: 100,
-        floating: true,
-        borderWidth: 1,
-
-        backgroundColor: (
-            (Highcharts.theme && Highcharts.theme.legendBackgroundColor)
-            || '#FFFFFF'),
-        shadow: true
+        itemMarginTop: 0,
+        itemMarginBottom: 0
     };
     var credits = {
         enabled: false
@@ -88,6 +85,7 @@ function addStackedBarCHart() {
     json.plotOptions = plotOptions;
     json.legend = legend;
     json.credits = credits;
+    json.exporting = {enabled: false};
     $('#stackedBarChart').highcharts(json);    
 }
 
@@ -96,8 +94,9 @@ function addGaugeChart(containerId, gaugeValue) {
 
         chart: {
             type: 'solidgauge',
-            height: 150,
-            width:120,
+            height: 100,
+            width:100,
+            margin: [0, 0, 0, 0],
             events: {
                 load: alignLabel,
                 redraw: alignLabel                
@@ -171,7 +170,7 @@ function addGaugeChart(containerId, gaugeValue) {
             name: 'Average',
             data: [{
                 color: "#26D2A8",
-                radius: '122%',
+                radius: '112%',
                 innerRadius: '88%',
                 y: 80
             }]
@@ -189,7 +188,7 @@ function addGaugeChart(containerId, gaugeValue) {
         grossLabel.destroy();
       }
     
-      grossLabel = chart.renderer.text(gaugeValue+'%', (chart.plotWidth / 3) + 12, (chart.plotHeight / 2) + 15)
+      grossLabel = chart.renderer.text(gaugeValue+'%', (chart.plotWidth / 3) + 5, (chart.plotHeight / 2) + 10)
         .css({
           color: '#000',
           fontFamily:"'Montserrat', sans-serif",

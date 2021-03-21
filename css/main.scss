@@ -271,6 +271,7 @@
 
                         .footer{
                             text-align: center;
+                            margin: 4px 10px 0px -10px;
                             @include text_monts(1rem, black);
                             font-weight: 700;                        
                         }
