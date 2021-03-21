@@ -89,11 +89,36 @@
 .rq-navbar .nav-list-items .list-item {
   margin: 10px 0;
   cursor: pointer;
+  position: relative;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.rq-navbar .nav-list-items .list-item:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .rq-navbar .nav-list-items .list-item i {
   font-size: 1.5rem;
   color: darkgrey;
+}
+
+.rq-navbar .nav-list-items .list-item:hover::after {
+  width: 130%;
+}
+
+.rq-navbar .nav-list-items .list-item::after {
+  position: absolute;
+  background: blue;
+  height: 1.5px;
+  bottom: -1%;
+  width: 0%;
+  content: "";
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
 }
 
 .rq-navbar .nav-list-items .active i {

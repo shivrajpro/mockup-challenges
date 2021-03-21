@@ -84,10 +84,29 @@
         .list-item {
             margin: 10px 0;
             cursor: pointer;
-
+            position: relative;
+            transition: transform .3s ease;
+            
+            &:hover{
+               transform: scale(1.2); 
+            }
             i {
                 font-size: 1.5rem;
                 color    : darkgrey;
+            }
+
+            &:hover::after{
+                width: 130%;
+            }
+
+            &::after{
+                position: absolute;
+                background: blue;
+                height: 1.5px;
+                bottom: -1%;
+                width: 0%;
+                content: "";
+                transition: width 0.3s ease;
             }
         }
 
