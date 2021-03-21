@@ -13,18 +13,17 @@ function addStackedBarCHart() {
         let obj = {};
 
         let color = 'blue';
-        //#85B0FF #4A35FF #0800A3
         switch (i%3) {
             case 0:
-                color = "#85B0FF";
+                color = "#2119BC";//dark
                 break;
 
             case 1:
-                color = "#4A35FF";
+                color = "#9EC9FF";
                 break;
 
             case 2:
-                color = "#0800A3";
+                color = "#634EFF"; //faint
                 break;
             
             default:
@@ -32,7 +31,7 @@ function addStackedBarCHart() {
         }
 
         obj.y = i*10;
-        obj.color = color;
+        // obj.color = color;
 
         employerData.push(obj);
     }
@@ -43,15 +42,15 @@ function addStackedBarCHart() {
         let color = 'blue';
         switch (i%3) {
             case 0:
-                color = "#85B0FF";
+                color = "#2119BC";
                 break;
 
             case 1:
-                color = "#4A35FF";
+                color = "#9EC9FF";
                 break;
 
             case 2:
-                color = "#0800A3";
+                color = "#634EFF";
                 break;
             
             default:
@@ -59,7 +58,7 @@ function addStackedBarCHart() {
         }
 
         obj.y = i*10;
-        obj.color = color;        
+        // obj.color = color;        
         employeeData.push(obj);
     }
 
@@ -69,15 +68,15 @@ function addStackedBarCHart() {
         let color = 'blue';
         switch (i%3) {
             case 0:
-                color = "#85B0FF";
+                color = "#2119BC";
                 break;
 
             case 1:
-                color = "#4A35FF";
+                color = "#9EC9FF";
                 break;
 
             case 2:
-                color = "#0800A3";
+                color = "#634EFF";
                 break;
             
             default:
@@ -85,7 +84,7 @@ function addStackedBarCHart() {
         }
 
         obj.y = i*10;
-        obj.color = color;        
+        // obj.color = color;        
         totalInterestData.push(obj);
     }
 
@@ -152,17 +151,17 @@ function addStackedBarCHart() {
         series: [
             {
                 name: 'Employer',
-                color:"#0800A3",
+                color:"#2119BC", //dark
                 data: employerData
             },
             {
                 name: 'Employee',
-                color:"#4A35FF",
+                color:"#634EFF",
                 data: employeeData
             },
             {
                 name: 'Total Interest',
-                color:"#85B0FF",
+                color:"#9EC9FF",
                 data: totalInterestData
             }
         ]
