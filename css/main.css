@@ -107,18 +107,23 @@
 }
 
 .rq-navbar .nav-list-items .list-item:hover::after {
-  width: 130%;
+  -webkit-transform: scaleX(1.25);
+          transform: scaleX(1.25);
 }
 
 .rq-navbar .nav-list-items .list-item::after {
   position: absolute;
+  content: "";
   background: blue;
   height: 1.5px;
   bottom: -1%;
-  width: 0%;
-  content: "";
-  -webkit-transition: width 0.3s ease;
-  transition: width 0.3s ease;
+  width: 100%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
 }
 
 .rq-navbar .nav-list-items .active i {
@@ -172,6 +177,55 @@
   margin: 12px 4px;
 }
 
+.main-content .left .today .values .my-dropdown {
+  width: 100px;
+}
+
+.main-content .left .today .values .my-dropdown ul {
+  list-style: none;
+  height: 10px;
+  border: 2px solid darkgray;
+  width: 100%;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 0px 0px 10px 10px;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.main-content .left .today .values .my-dropdown ul.open {
+  height: 80px;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.main-content .left .today .values .my-dropdown ul.open li {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.main-content .left .today .values .my-dropdown ul.open li:hover {
+  background: #ebe8e8;
+}
+
+.main-content .left .today .values .my-dropdown ul.open li::after {
+  position: absolute;
+  content: "";
+  background: black;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  opacity: .2;
+}
+
 .main-content .left .today .values .want-btn {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.8rem;
@@ -182,7 +236,14 @@
   width: 100px;
   background: #4935FF;
   border-radius: 10px;
+  border: none;
   outline: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.main-content .left .today .values .want-btn.active {
+  border-radius: 10px 10px 0px 0px;
 }
 
 .main-content .left .today .transactions {

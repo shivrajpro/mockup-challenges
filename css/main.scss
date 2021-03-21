@@ -82,31 +82,33 @@
         }
 
         .list-item {
-            margin: 10px 0;
-            cursor: pointer;
-            position: relative;
+            margin    : 10px 0;
+            cursor    : pointer;
+            position  : relative;
             transition: transform .3s ease;
-            
-            &:hover{
-               transform: scale(1.2); 
+
+            &:hover {
+                transform: scale(1.2);
             }
+
             i {
                 font-size: 1.5rem;
                 color    : darkgrey;
             }
 
-            &:hover::after{
-                width: 130%;
+            &:hover::after {
+                transform: scaleX(1.25);
             }
 
-            &::after{
-                position: absolute;
+            &::after {
+                position  : absolute;
+                content   : "";
                 background: blue;
-                height: 1.5px;
-                bottom: -1%;
-                width: 0%;
-                content: "";
-                transition: width 0.3s ease;
+                height    : 1.5px;
+                bottom    : -1%;
+                width     : 100%;
+                transform : scale(0);
+                transition: transform .5s ease;
             }
         }
 
@@ -160,6 +162,48 @@
                     margin: 12px 4px;
                 }
 
+                .my-dropdown{
+                    width: 100px;
+                    
+                    ul{
+                        list-style: none;
+                        height: 10px;
+                        border: 2px solid darkgray;
+                        width: 100%;
+                        line-height: 25px;
+                        text-align: center;
+                        border-radius: 0px 0px 10px 10px;
+                        transform: scaleY(0);
+                        transition: all .3s;
+                    }
+                    
+                    ul.open{
+                        height: 80px;
+                        transform: scaleY(1);
+
+                        li{
+                            position: relative;
+                            @include text_monts(1rem, black);
+                            cursor: pointer;
+                            transition: all 0.5s;
+                            &:hover{
+                                background: rgb(235, 232, 232);
+                            }
+                        }
+
+                        li::after{
+                            position: absolute;
+                            content: "";
+                            background: black;
+                            left: 0;
+                            bottom: 0;
+                            height: 1px;
+                            width: 100%;
+                            opacity: .2;
+                        }
+                    }
+                }
+
                 .want-btn {
                     @include text_monts(.8rem, white);
                     font-weight  : bolder;
@@ -168,7 +212,13 @@
                     width        : 100px;
                     background   : #4935FF;
                     border-radius: 10px;
+                    border: none;
                     outline      : none;
+                    transition: all 0.3s;
+                }
+
+                .want-btn.active{
+                    border-radius: 10px 10px 0px 0px;
                 }
             }
 
