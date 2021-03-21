@@ -263,9 +263,17 @@
                 .gauge-charts{
                     width: 72%;
                     display: flex;
-    
-                    img{
-                        width: 100%;
+                        
+                    .chart{
+                        // border: 1px solid red;
+                        height: 100%;
+                        width: 33%;
+
+                        .footer{
+                            text-align: center;
+                            @include text_monts(1rem, black);
+                            font-weight: 700;                        
+                        }
                     }
                 }
             }
