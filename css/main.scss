@@ -9,6 +9,30 @@
     font-family: 'Merriweather', serif;
 }
 
+
+/*
+100% = 16px = 1rem default font-size
+50% = 8px
+we want 1rem = 10px
+we can write font-size: 10px
+to get rid of 10px use %
+so 100% = 16px then 10px is how much? 1000/16 = 62.5
+
+hence font-size:62.5% = 1rem = 10px
+how to make css text responsive
+
+@media(max-width:998px){
+    html{
+        font-size:55%
+    }
+}
+
+@media(max-width:768px){
+    html{
+        font-size:45%
+    }
+}
+*/
 .monts-small-grey {
     @include text_monts(.8rem, rgb(100, 95, 95));
 }
